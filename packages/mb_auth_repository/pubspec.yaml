@@ -1,0 +1,17 @@
+name: mb_auth_repository
+description: Mal bazar auth repository dart package
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+dev_dependencies:
+  mocktail: ^1.0.4
+
+dependencies:
+  mb_storage:
+    path: ../mb_storage
+  equatable: ^2.0.5
+  shared_preferences: ^2.2.0
+  firebase_auth: ^5.4.1

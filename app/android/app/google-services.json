@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "751855123641",
+    "project_id": "malbazar-b37da",
+    "storage_bucket": "malbazar-b37da.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751855123641:android:9fefb19e2741693cc9ef68",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2Yl8HS7O8hB2mnBx8HQvk1uwZHjiGxbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751855123641:android:fbc8d25de283b824c9ef68",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.mal_bazar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2Yl8HS7O8hB2mnBx8HQvk1uwZHjiGxbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

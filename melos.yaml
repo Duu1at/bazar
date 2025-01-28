@@ -1,0 +1,53 @@
+name: mal_bazar
+
+packages:
+  - app
+  - packages/**
+
+command:
+  bootstrap:
+    runPubGetInParallel: false
+  version:
+    message: |
+      chore: cut package releases 🎉
+scripts:
+  format-code:
+    exec: dart format . --line-length 120
+    description: "Format Dart code for selected package"
+
+  format-check:
+    exec: dart format . --line-length 120 --set-exit-if-changed
+    description: "Check format all Dart code"
+
+  analyze:
+    exec: flutter analyze
+    description: "Analyze all Dart code"
+
+  analyze-check:
+    exec: flutter analyze --fatal-warnings
+    description: "Analyze all Dart code and exit if there are any fatal warnings"
+
+  flutter-clean:
+    exec: flutter clean
+    description: "Clean pub dependencies"
+
+  pub-get:
+    exec: flutter pub get
+    description: "Get pub dependencies"
+
+  run-app:
+    run: cd app && flutter run
+    description: "mal_bazar app"
+
+  # Build apk and appbundle
+  build-apk:
+    run: cd app && flutter build apk
+    description: "Build an APK file"
+
+  build-ios:
+    run: cd app && flutter build ios --release --no-codesign
+    description: "Build an IOS file"
+
+  build-appbundle:
+    run: cd app && flutter build appbundle
+    description: "Build an appbundle file"
