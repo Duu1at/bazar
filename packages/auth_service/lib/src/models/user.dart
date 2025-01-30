@@ -43,5 +43,24 @@ class User extends Equatable {
   }
 
   @override
+  factory User.fromMap(Map<String, dynamic> map) {
+    return User(
+      id: map['id'] as String,
+      email: map['email'] as String?,
+      name: map['name'] as String?,
+      photo: map['photo'] as String?,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'email': email,
+      'name': name,
+      'photo': photo,
+    };
+  }
+
+  @override
   List<Object?> get props => [email, id, name, photo];
 }

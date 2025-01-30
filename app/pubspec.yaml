@@ -20,9 +20,8 @@ dependencies:
 
   mb_storage:
     path: ../packages/mb_storage
-  mb_auth_repository:
-    path: ../packages/mb_auth_repository
-
+  auth_service:
+    path: ../packages/auth_service
 dev_dependencies:
   flutter_test:
     sdk: flutter

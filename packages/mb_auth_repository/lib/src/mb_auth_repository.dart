@@ -20,17 +20,17 @@ class MbAuthRepository {
     return _firebaseAuth.authStateChanges().map(
       (firebaseUser) {
         final user = firebaseUser == null ? User.empty : firebaseUser.toUser;
-        _cache.writeString(key: userCacheKey, value: user.toString());
+        // _cache.writeString(key: userCacheKey, value: user.toString());
         return user;
       },
     );
   }
 
-  User get currentUser {
-    final String? get_user = _cache.readString(key: userCacheKey);
-    User user = get_user != null ? User.fromFirebase(jsonDecode(get_user)) : User.empty;
-    return user;
-  }
+  // User get currentUser {
+  //   // final String? get_user = _cache.readString(key: userCacheKey);
+  //   User user = get_user != null ? User.fromFirebase(jsonDecode(get_user)) : User.empty;
+  //   return user;
+  // }
 
   Future<void> signUp({required String email, required String password}) async {
     try {
@@ -39,9 +39,9 @@ class MbAuthRepository {
         password: password,
       );
     } on firebase_auth.FirebaseAuthException catch (e) {
-      throw SignUpWithEmailAndPasswordFailure.fromCode(e.code);
+      // throw SignUpWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (_) {
-      throw const SignUpWithEmailAndPasswordFailure();
+      // throw const SignUpWithEmailAndPasswordFailure();
     }
   }
 
@@ -55,9 +55,9 @@ class MbAuthRepository {
         password: password,
       );
     } on firebase_auth.FirebaseAuthException catch (e) {
-      throw LogInWithEmailAndPasswordFailure.fromCode(e.code);
+      // throw LogInWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (_) {
-      throw const LogInWithEmailAndPasswordFailure();
+      // throw const LogInWithEmailAndPasswordFailure();
     }
   }
 
@@ -67,7 +67,7 @@ class MbAuthRepository {
         _firebaseAuth.signOut(),
       ]);
     } catch (_) {
-      throw LogOutFailure();
+      // throw LogOutFailure();
     }
   }
 }

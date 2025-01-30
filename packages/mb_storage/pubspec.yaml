@@ -11,3 +11,5 @@ dev_dependencies:
 
 dependencies:
   shared_preferences: ^2.2.0
+  auth_service:
+    path: ../auth_service

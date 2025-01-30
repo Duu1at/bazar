@@ -17,6 +17,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auth_service:
+    dependency: "direct main"
+    description:
+      path: "../packages/auth_service"
+      relative: true
+    source: path
+    version: "0.1.0+1"
   bloc:
     dependency: transitive
     description:
@@ -245,13 +252,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.1"
-  mb_auth_repository:
-    dependency: "direct main"
-    description:
-      path: "../packages/mb_auth_repository"
-      relative: true
-    source: path
-    version: "0.1.0+1"
   mb_storage:
     dependency: "direct main"
     description:

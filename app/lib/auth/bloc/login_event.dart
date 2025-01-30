@@ -11,3 +11,13 @@ final class AppUserSubscriptionRequested extends LoginEvent {
 final class AppLogoutPressed extends LoginEvent {
   const AppLogoutPressed();
 }
+
+final class AppSingInWithEmail extends LoginEvent {
+  const AppSingInWithEmail({
+    required this.email,
+    required this.password,
+  });
+
+  final String email;
+  final String password;
+}
