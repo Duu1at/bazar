@@ -1,4 +1,5 @@
 import 'package:app/auth/bloc/login_bloc.dart';
+import 'package:app/auth/view/login_page.dart';
 import 'package:auth_service/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +21,7 @@ class HomePageBody extends StatefulWidget {
   const HomePageBody({super.key});
 
   @override
-  _HomePageBodyState createState() => _HomePageBodyState();
+  State<HomePageBody> createState() => _HomePageBodyState();
 }
 
 class _HomePageBodyState extends State<HomePageBody> {
@@ -28,7 +29,7 @@ class _HomePageBodyState extends State<HomePageBody> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    SubmitScreen(),
+    AuthHandler(),
     ChatScreen(),
   ];
 
@@ -82,11 +83,51 @@ class SubmitScreen extends StatelessWidget {
   }
 }
 
+class AuthHandler extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final authService = context.watch<AuthService>();
+
+    return StreamBuilder<User>(
+      stream: authService.user,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+        final user = snapshot.data;
+        return user == null || user == User.empty ? const LoginPage() : MainWidget();
+      },
+    );
+  }
+}
+
 class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Text('Страница "Чат"'),
+    );
+  }
+}
+
+class LoginWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('LoginWidget '),
+    );
+  }
+}
+
+class MainWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('MainWidget '),
     );
   }
 }
