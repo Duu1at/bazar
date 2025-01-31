@@ -27,18 +27,18 @@ class LoginScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () async {
-                // try {
-                //   context.read<LoginBloc>()
-                //     ..signInWithEmail(
-                //       _emailController.text,
-                //       _passwordController.text,
-                //     );
-                //   Navigator.pop(context); // Возвращаемся на главный экран
-                // } catch (e) {
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(content: Text('Ошибка: $e')),
-                //   );
-                // }
+                try {
+                  // context.read<LoginBloc>()
+                  //   ..signInWithEmail(
+                  //     _emailController.text,
+                  //     _passwordController.text,
+                  //   );
+                  Navigator.pop(context); // Возвращаемся на главный экран
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Ошибка: $e')),
+                  );
+                }
               },
               child: Text('Войти через Email'),
             ),

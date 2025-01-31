@@ -169,7 +169,7 @@ class _MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('MainWidget')),
+      appBar: AppBar(title: Text('MainWidget')),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
