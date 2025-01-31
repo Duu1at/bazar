@@ -24,9 +24,9 @@ class MbStorage implements LocalStorageInterfaceSyncRead {
   }
 
   @override
-  Future<void> deleteUser({required String key, required bool value}) {
+  Future<void> deleteUser({required String key}) {
     try {
-      return _sharedPreferences.setBool(key, value);
+      return _sharedPreferences.remove(key);
     } catch (e) {
       throw LocalStorageException(e);
     }
@@ -51,8 +51,16 @@ class MbStorage implements LocalStorageInterfaceSyncRead {
   }
 
   @override
-  Future<User> get getUser async {
-    final data = _sharedPreferences.getString(AuthService.userKey);
-    return data == null ? User.empty : User.fromMap(jsonDecode(data));
+  Future<User> getUser({required String key}) async {
+    try {
+      final jsonString = _sharedPreferences.getString(key);
+      if (jsonString == null || jsonString.isEmpty) {
+        return User.empty;
+      }
+      final Map<String, dynamic> userMap = jsonDecode(jsonString);
+      return User.fromMap(userMap);
+    } catch (e) {
+      return User.empty;
+    }
   }
 }

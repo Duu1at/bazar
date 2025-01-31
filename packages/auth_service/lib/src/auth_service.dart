@@ -27,10 +27,6 @@ class AuthService {
     );
   }
 
-  Future<User> get currentUser async {
-    return _cache.getUser;
-  }
-
   Future<void> loginWithEmail(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
@@ -91,7 +87,8 @@ class AuthService {
 
   Future<void> signOut() async {
     await _auth.signOut();
-    await _cache.deleteUser(key: _isLoggedIn, value: false);
+    await _cache.deleteUser(key: userKey);
+    _auth.authStateChanges().listen((_) {});
   }
 
   Future<bool> isUserCached() async {

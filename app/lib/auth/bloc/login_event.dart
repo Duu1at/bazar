@@ -1,23 +1,23 @@
-part of 'login_bloc.dart';
+// part of 'login_bloc.dart';
 
-sealed class LoginEvent {
-  const LoginEvent();
-}
+// sealed class LoginEvent {
+//   const LoginEvent();
+// }
 
-final class AppUserSubscriptionRequested extends LoginEvent {
-  const AppUserSubscriptionRequested();
-}
+// final class AppUserSubscriptionRequested extends LoginEvent {
+//   const AppUserSubscriptionRequested();
+// }
 
-final class AppLogoutPressed extends LoginEvent {
-  const AppLogoutPressed();
-}
+// final class AppLogoutPressed extends LoginEvent {
+//   const AppLogoutPressed();
+// }
 
-final class AppSingInWithEmail extends LoginEvent {
-  const AppSingInWithEmail({
-    required this.email,
-    required this.password,
-  });
+// final class AppSingInWithEmail extends LoginEvent {
+//   const AppSingInWithEmail({
+//     required this.email,
+//     required this.password,
+//   });
 
-  final String email;
-  final String password;
-}
+//   final String email;
+//   final String password;
+// }

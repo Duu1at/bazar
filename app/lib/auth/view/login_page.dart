@@ -19,6 +19,8 @@ class _LoginPageState extends State<LoginPage> {
             _emailController.text,
             _passwordController.text,
           );
+    } on LogInWithEmailAndPasswordFailure catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Ошибка: ${e.message}")));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Ошибка: $e")));
     }
@@ -30,8 +32,10 @@ class _LoginPageState extends State<LoginPage> {
             _emailController.text,
             _passwordController.text,
           );
+    } on SignUpWithEmailAndPasswordFailure catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Ошибка: ${e.message}")));
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Ошибка: $e")));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Ошибка: ${e}")));
     }
   }
 
