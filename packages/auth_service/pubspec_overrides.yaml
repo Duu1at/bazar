@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: mb_storage
-dependency_overrides:
-  mb_storage:
-    path: ../mb_storage

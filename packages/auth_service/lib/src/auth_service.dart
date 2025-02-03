@@ -13,9 +13,7 @@ class AuthService {
   final MbStorage _cache;
   final firebase_auth.FirebaseAuth _auth;
   String? _verificationId;
-
   static const String userKey = 'user';
-  static const String _isLoggedIn = 'isLoggedIn';
 
   Stream<User> get user {
     return _auth.authStateChanges().map(
@@ -30,7 +28,6 @@ class AuthService {
   Future<void> loginWithEmail(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      await _cache.cacheUser(key: userKey, value: true);
     } on firebase_auth.FirebaseAuthException catch (e) {
       throw LogInWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (e) {
@@ -41,7 +38,6 @@ class AuthService {
   Future<void> signUpWithEmail(String email, String password) async {
     try {
       await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      await _cache.cacheUser(key: userKey, value: true);
     } on firebase_auth.FirebaseAuthException catch (e) {
       throw SignUpWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (e) {
@@ -55,7 +51,6 @@ class AuthService {
         phoneNumber: phoneNumber,
         verificationCompleted: (firebase_auth.PhoneAuthCredential credential) async {
           await _auth.signInWithCredential(credential);
-          await _cache.cacheUser(key: userKey, value: true);
         },
         verificationFailed: (firebase_auth.FirebaseAuthException e) {
           throw LoginWithPhoneException.fromCode(e.code);
@@ -77,7 +72,6 @@ class AuthService {
         smsCode: otp,
       );
       await _auth.signInWithCredential(credential);
-      await _cache.cacheUser(key: _isLoggedIn, value: true);
     } on firebase_auth.FirebaseAuthException catch (e) {
       throw SignUpVerifyOtpException.fromCode(e.code);
     } catch (e) {
@@ -89,10 +83,6 @@ class AuthService {
     await _auth.signOut();
     await _cache.deleteUser(key: userKey);
     _auth.authStateChanges().listen((_) {});
-  }
-
-  Future<bool> isUserCached() async {
-    return _cache.isUserCached(key: _isLoggedIn);
   }
 }
 

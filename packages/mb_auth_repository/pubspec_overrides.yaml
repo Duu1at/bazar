@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: auth_service,mb_storage
-dependency_overrides:
-  auth_service:
-    path: ../auth_service
-  mb_storage:
-    path: ../mb_storage
