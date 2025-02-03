@@ -1,5 +1,4 @@
 import 'package:app/auth/view/phone_page.dart';
-import 'package:app/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
