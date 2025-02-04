@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:app/app/view/app_view.dart';
 import 'package:app/app_observer.dart';
 import 'package:auth_service/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mb_storage/mb_storage.dart';
+import 'app/view/app_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -31,6 +31,6 @@ void main() async {
         ),
       ),
     ],
-    child: const MyApp(),
+    child: const AppView(),
   ));
 }
