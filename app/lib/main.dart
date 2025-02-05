@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:app/app/cubit/app_cubit.dart';
 import 'package:app/app_observer.dart';
 import 'package:auth_service/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -21,16 +22,10 @@ void main() async {
   final storage = await MbStorage.getInstance();
   final firebaseAuth = FirebaseAuth.instance;
 
-  runApp(MultiRepositoryProvider(
-    providers: [
-      RepositoryProvider<MbStorage>(create: (context) => storage),
-      RepositoryProvider<AuthService>(
-        create: (context) => AuthService(
-          storage,
-          firebaseAuth,
-        ),
-      ),
-    ],
-    child: const AppView(),
-  ));
+  runApp(
+    MyApp(
+      firebaseAuth: firebaseAuth,
+      storage: storage,
+    ),
+  );
 }

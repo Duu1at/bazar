@@ -9,62 +9,6 @@ abstract class AppColors {
   /// This is a transparent color
   static const Color transparent = Color(0x00000000);
 
-  /// Tomato figma style properties
-  /// hex: #EB4F29
-  /// opacity: 1
-  /// This is a tomato color
-  static const Color tomato = Color(0xffEB4F29);
-
-  /// tomato2 figma style properties
-  /// hex: #FF4139
-  /// opacity: 1
-  /// This is a tomato2 color
-  static const Color tomato2 = Color(0xffFF4139);
-
-  /// Tomato3 figma style properties
-  /// hex: #FF4139
-  /// opacity: 1
-  /// This is a tomato3 color
-  static const Color tomato3 = Color(0xffEF6F33);
-
-  /// Tomato Gradient figma style properties
-  /// linear gradient
-  /// start,stop hex: (#EF6F33,#E93921)
-  /// start,stop opacity: (1,1)
-  /// This is a tomatoGradient color
-  static const List<Color> tomatoGradient = <Color>[
-    Color(0xffEF6F33),
-    Color(0xffE93921),
-  ];
-
-  /// darkslateblue figma style properties
-  /// hex: #075395
-  /// opacity: 1
-  /// This is a darkslateblue color
-  static const Color darkslateblue = Color(0xff075395);
-
-  /// dodgerblue figma style properties
-  /// hex: #118CF8
-  /// opacity: 1
-  /// This is a dodgerblue color
-  static const Color dodgerblue = Color(0xff118CF8);
-
-  /// cornflowerblue figma style properties
-  /// hex: #50ADFF
-  /// opacity: 1
-  /// This is a cornflowerblue color
-  static const Color cornflowerblue = Color(0xff50ADFF);
-
-  /// Darkslateblue Gradient figma style properties
-  /// linear gradient
-  /// start,stop hex: (#89C8FF,#118CF8)
-  /// start,stop opacity: (1,1)
-  /// This is a darkslateblueGradient color
-  static const List<Color> darkslateblueGradient = <Color>[
-    Color(0xff89C8FF),
-    Color(0xff118CF8),
-  ];
-
   /// White figma style properties
   /// hex: #ffffff
   /// opacity: 1
@@ -75,31 +19,13 @@ abstract class AppColors {
   /// hex: #F3F3F3
   /// opacity: 1
   /// This is a whitesmoke color
-  static const Color whitesmoke = Color(0xffF3F3F3);
-
-  /// ghostwhite figma style properties
-  /// hex: #F0F4FE
-  /// opacity: 1
-  /// This is a ghostwhite color
-  static const Color ghostwhite = Color(0xffF0F4FE);
-
-  /// darkred figma style properties
-  /// hex: #A30C05
-  /// opacity: 1
-  /// This is a darkred color
-  static const Color darkred = Color(0xffA30C05);
+  static const Color whitesmoke = Color(0xdee4e7e9);
 
   /// mediumseagreen figma style properties
   /// hex: #4AB65E
   /// opacity: 1
   /// This is a mediumseagreen color
   static const Color mediumseagreen = Color(0xff4AB65E);
-
-  /// goldenrod figma style properties
-  /// hex: #FFB651
-  /// opacity: 1
-  /// This is a goldenrod color
-  static const Color goldenrod = Color(0xffFFB651);
 
   /// Black figma style properties
   /// hex: #000000
@@ -111,7 +37,7 @@ abstract class AppColors {
   /// hex: #0E0E0F
   /// opacity: 1
   /// This is a black2 color
-  static const Color black2 = Color(0xff0E0E0F);
+  static const Color black2 = Color(0x37474f4f);
 
   /// Black3 figma style properties
   /// hex: #1C1C1E
@@ -179,53 +105,53 @@ abstract class AppColors {
   /// This is a telegram color
   static const Color telegram = Color(0xff2BABEE);
 
-  static LinearGradient cardGradient(ThemeData theme, {bool isTomato = false, bool isBlue = false}) {
-    final brightness = theme.brightness;
-    if ((theme.colorScheme.primary == AppColors.tomato || isTomato) && isBlue == false) {
-      return switch (brightness) {
-        Brightness.light => const LinearGradient(
-            colors: [
-              Color(0xFFFCEBE6),
-              Color(0xFFFFFDFD),
-              Color(0xFFFCEBE6),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        Brightness.dark => const LinearGradient(
-            colors: [
-              Color(0xFF3C2D2B),
-              Color(0xFF2B292A),
-              Color(0xFF2B292A),
-              Color(0xFF3C2D2B),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-      };
-    } else {
-      return switch (brightness) {
-        Brightness.light => const LinearGradient(
-            colors: [
-              Color(0xFFEAF5FE),
-              Color(0xFFFDFEFF),
-              Color(0xFFFDFEFF),
-              Color(0xFFEAF5FE),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        Brightness.dark => const LinearGradient(
-            colors: [
-              Color(0xFF2D353D),
-              Color(0xFF2A2A2C),
-              Color(0xFF2A2A2C),
-              Color(0xFF2D353D),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-      };
-    }
-  }
+  // static LinearGradient cardGradient(ThemeData theme, {bool isTomato = false, bool isBlue = false}) {
+  //   final brightness = theme.brightness;
+  //   if ((theme.colorScheme.primary == AppColors.tomato || isTomato) && isBlue == false) {
+  //     return switch (brightness) {
+  //       Brightness.light => const LinearGradient(
+  //           colors: [
+  //             Color(0xFFFCEBE6),
+  //             Color(0xFFFFFDFD),
+  //             Color(0xFFFCEBE6),
+  //           ],
+  //           begin: Alignment.topLeft,
+  //           end: Alignment.bottomRight,
+  //         ),
+  //       Brightness.dark => const LinearGradient(
+  //           colors: [
+  //             Color(0xFF3C2D2B),
+  //             Color(0xFF2B292A),
+  //             Color(0xFF2B292A),
+  //             Color(0xFF3C2D2B),
+  //           ],
+  //           begin: Alignment.topLeft,
+  //           end: Alignment.bottomRight,
+  //         ),
+  //     };
+  //   } else {
+  //     return switch (brightness) {
+  //       Brightness.light => const LinearGradient(
+  //           colors: [
+  //             Color(0xFFEAF5FE),
+  //             Color(0xFFFDFEFF),
+  //             Color(0xFFFDFEFF),
+  //             Color(0xFFEAF5FE),
+  //           ],
+  //           begin: Alignment.topLeft,
+  //           end: Alignment.bottomRight,
+  //         ),
+  //       Brightness.dark => const LinearGradient(
+  //           colors: [
+  //             Color(0xFF2D353D),
+  //             Color(0xFF2A2A2C),
+  //             Color(0xFF2A2A2C),
+  //             Color(0xFF2D353D),
+  //           ],
+  //           begin: Alignment.topLeft,
+  //           end: Alignment.bottomRight,
+  //         ),
+  //     };
+  //   }
+  // }
 }

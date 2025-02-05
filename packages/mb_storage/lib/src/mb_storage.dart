@@ -63,4 +63,31 @@ class MbStorage implements LocalStorageInterfaceSyncRead {
       return User.empty;
     }
   }
+
+  @override
+  bool? readBool({required String key}) {
+    try {
+      return _sharedPreferences.getBool(key);
+    } catch (error, stackTrace) {
+      throw LocalStorageException(error, stackTrace);
+    }
+  }
+
+  @override
+  Future<bool> writeString({required String key, required String value}) {
+    try {
+      return _sharedPreferences.setString(key, value);
+    } catch (error, stackTrace) {
+      throw LocalStorageException(error, stackTrace);
+    }
+  }
+
+  @override
+  Future<bool> writeBool({required String key, required bool value}) {
+    try {
+      return _sharedPreferences.setBool(key, value);
+    } catch (error, stackTrace) {
+      throw LocalStorageException(error, stackTrace);
+    }
+  }
 }
