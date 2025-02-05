@@ -13,8 +13,9 @@ abstract class AppTheme {
   TextTheme get primaryTextTheme;
 
   AppBarTheme get appBarTheme {
-    return const AppBarTheme(
+    return AppBarTheme(
       centerTitle: true,
+      color: colorScheme.surface,
     );
   }
 
@@ -109,9 +110,14 @@ abstract class AppTheme {
 
   BottomNavigationBarThemeData get bottomAppBarTheme {
     return BottomNavigationBarThemeData(
-      backgroundColor: colorScheme.onSecondary,
       selectedItemColor: colorScheme.primary,
-      unselectedItemColor: colorScheme.onSurface,
+      selectedIconTheme: IconThemeData(
+        color: colorScheme.outline,
+        size: 30,
+      ),
+      unselectedItemColor: colorScheme.secondary,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
     );
   }
 

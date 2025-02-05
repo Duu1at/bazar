@@ -1,7 +1,5 @@
 import 'dart:developer';
-import 'package:app/app/cubit/app_cubit.dart';
 import 'package:app/app_observer.dart';
-import 'package:auth_service/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

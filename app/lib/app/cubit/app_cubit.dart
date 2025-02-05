@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mb_storage/mb_storage.dart';
 
 class AppThemeCubit extends Cubit<AppTheme> {
-  AppThemeCubit(this.storage) : super(const AppLightTheme());
+  AppThemeCubit(this.storage) : super(const AppDarkTheme());
 
   final MbStorage storage;
 

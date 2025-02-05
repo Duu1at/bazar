@@ -69,7 +69,7 @@ class _AppViewBodyState extends State<AppViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Auth App'),
+        title: const Text('Flutter  App'),
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
