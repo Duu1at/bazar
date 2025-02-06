@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: deep_link_client
+dependency_overrides:
+  deep_link_client:
+    path: ../deep_link_client

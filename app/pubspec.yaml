@@ -13,8 +13,9 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
 
-  firebase_core: ^3.10.1
-  firebase_auth: ^5.4.1
+  firebase_core: ^3.11.0
+  firebase_auth: ^5.4.2
+  firebase_analytics: ^11.4.2
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
 
@@ -22,6 +23,31 @@ dependencies:
     path: ../packages/mb_storage
   auth_service:
     path: ../packages/auth_service
+  email_launcher:
+    path: ../packages/email_launcher
+  form_inputs:
+    path: ../packages/form_inputs
+  token_storage:
+    path: ../packages/authentication_client/token_storage
+  user_repository:
+    path: ../packages/user_repository
+  firebase_authentication_client:
+    path: ../packages/authentication_client/firebase_authentication_client
+  firebase_deep_link_client:
+    path: ../packages/deep_link_client/firebase_deep_link_client
+  analytics_repository:
+    path: ../packages/analytics_repository
+  app_ui:
+    path: ../packages/app_ui
+  persistent_storage:
+    path: ../packages/storage/persistent_storage
+  package_info_client:
+    path: ../packages/package_info_client
+  deep_link_client:
+    path: ../packages/deep_link_client/deep_link_client
+  firebase_dynamic_links: ^6.1.2
+  shared_preferences: ^2.5.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -29,6 +55,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+dependency_overrides:
+  intl: ^0.19.0
 
   # assets:
   #   - images/a_dot_burr.jpeg
