@@ -201,9 +201,9 @@
     },
     {
       "name": "typed_data",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/typed_data-1.4.0",
+      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "2.17"
     },
     {
       "name": "web",
@@ -230,10 +230,10 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2025-02-03T07:14:02.567339Z",
+  "generated": "2025-02-07T11:48:33.396099Z",
   "generator": "pub",
-  "generatorVersion": "3.5.4",
-  "flutterRoot": "file:///Users/duu1at/flutter",
-  "flutterVersion": "3.24.5",
+  "generatorVersion": "3.4.3",
+  "flutterRoot": "file:///Users/duu1at/fvm/versions/3.22.2",
+  "flutterVersion": "3.22.2",
   "pubCache": "file:///Users/duu1at/.pub-cache"
 }
