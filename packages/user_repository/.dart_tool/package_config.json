@@ -3,19 +3,19 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-68.0.0",
+      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-73.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "_macros",
-      "rootUri": "file:///Users/duu1at/fvm/versions/3.22.2/bin/cache/dart-sdk/pkg/_macros",
+      "rootUri": "file:///Users/duu1at/fvm/versions/3.24.0/bin/cache/dart-sdk/pkg/_macros",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/analyzer-6.5.0",
+      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/analyzer-6.8.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -129,7 +129,7 @@
     },
     {
       "name": "macros",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/macros-0.1.0-main.0",
+      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/macros-0.1.2-main.4",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -350,10 +350,10 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2025-02-07T11:48:54.107524Z",
+  "generated": "2025-02-10T05:03:12.592124Z",
   "generator": "pub",
-  "generatorVersion": "3.4.3",
-  "flutterRoot": "file:///Users/duu1at/fvm/versions/3.22.2",
-  "flutterVersion": "3.22.2",
+  "generatorVersion": "3.5.0",
+  "flutterRoot": "file:///Users/duu1at/fvm/versions/3.24.0",
+  "flutterVersion": "3.24.0",
   "pubCache": "file:///Users/duu1at/.pub-cache"
 }
