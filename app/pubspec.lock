@@ -76,7 +76,7 @@ packages:
     source: path
     version: "0.1.0+1"
   authentication_client:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../packages/authentication_client/authentication_client"
       relative: true
@@ -964,7 +964,7 @@ packages:
     source: hosted
     version: "1.11.1"
   storage:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../packages/storage/storage"
       relative: true

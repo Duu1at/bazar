@@ -16,9 +16,10 @@ class _HomeViewState extends State<HomeView> {
       child: AppButton.blueDress(
         child: const Text('Logim model'),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const LoginModal()),
+          showAppModal<void>(
+            context: context,
+            builder: (context) => const LoginModal(),
+            routeSettings: const RouteSettings(name: LoginModal.name),
           );
         },
       ),
