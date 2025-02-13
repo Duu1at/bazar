@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: authentication_client,token_storage
+dependency_overrides:
+  authentication_client:
+    path: ../authentication_client
+  token_storage:
+    path: ../token_storage
