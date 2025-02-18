@@ -1,7 +1,5 @@
 import 'package:app/core/constants/constants.dart';
-import 'package:app/theme/themes/app_dark_theme.dart';
-import 'package:app/theme/themes/app_light_theme.dart';
-import 'package:app/theme/themes/app_theme.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mb_storage/mb_storage.dart';
 

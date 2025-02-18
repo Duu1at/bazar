@@ -6,7 +6,7 @@ import 'package:app/home/view/home_view.dart';
 import 'package:app/l10n/l10.dart';
 import 'package:app/login/bloc/login_with_email_link_bloc.dart';
 import 'package:app/submit/view/submit_view.dart';
-import 'package:app/theme/themes/app_dark_theme.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mb_storage/mb_storage.dart';
@@ -69,8 +69,8 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: context.read<AppThemeCubit>().state.themeData,
-      darkTheme: const AppDarkTheme().themeData,
+      theme: AppTheme().themeData,
+      darkTheme: AppDarkTheme().themeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const AppViewBody(),

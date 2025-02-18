@@ -1,6 +1,5 @@
-import 'package:app/theme/theme.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'app_theme.dart';
 
 @immutable
 final class AppDarkTheme extends AppTheme {

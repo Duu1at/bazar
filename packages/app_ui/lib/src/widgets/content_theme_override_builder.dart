@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:app_ui/src/theme/app_dark_theme.dart';
 import 'package:flutter/material.dart';
 
 /// {@template content_theme_override_builder}
@@ -20,7 +21,7 @@ class ContentThemeOverrideBuilder extends StatelessWidget {
     final theme = Theme.of(context);
     return Theme(
       data: theme.copyWith(
-        textTheme: AppTheme.contentTextTheme,
+        textTheme: AppDarkTheme().primaryTextTheme,
       ),
       child: Builder(builder: builder),
     );

@@ -1,6 +1,5 @@
-import 'package:app/theme/theme.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'app_theme.dart';
 
 @immutable
 final class AppLightTheme extends AppTheme {
@@ -89,7 +88,7 @@ final class AppLightTheme extends AppTheme {
 
   @override
   TextTheme get primaryTextTheme {
-    return const TextTheme(
+    return TextTheme(
       displayLarge: AppTextStyles.displayLarge,
       displayMedium: AppTextStyles.displayMedium,
       displaySmall: AppTextStyles.displaySmall,
