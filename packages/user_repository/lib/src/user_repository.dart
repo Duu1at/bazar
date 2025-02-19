@@ -5,7 +5,6 @@ import 'package:deep_link_client/deep_link_client.dart';
 import 'package:equatable/equatable.dart';
 import 'package:package_info_client/package_info_client.dart';
 import 'package:persistent_storage/persistent_storage.dart';
-import 'package:storage/storage.dart';
 import 'package:user_repository/user_repository.dart';
 
 part 'user_storage.dart';

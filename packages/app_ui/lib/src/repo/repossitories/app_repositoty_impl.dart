@@ -1,5 +1,4 @@
 import 'package:app_ui/app_ui.dart';
-import 'package:app_ui/src/repo/repo.dart';
 import 'package:flutter/material.dart';
 
 @immutable

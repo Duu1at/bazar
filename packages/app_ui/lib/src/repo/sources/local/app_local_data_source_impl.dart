@@ -1,7 +1,4 @@
 import 'package:app_ui/app_ui.dart';
-import 'package:app_ui/src/repo/repo.dart';
-import 'package:app_ui/src/theme/app_dark_theme.dart';
-import 'package:app_ui/src/theme/app_light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_storage/persistent_storage.dart';
 

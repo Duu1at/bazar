@@ -162,6 +162,7 @@ class _ColorSquare extends StatelessWidget {
   }
 
   String get hexCode {
+    // ignore: deprecated_member_use
     if (color.value.toRadixString(16).length <= 2) {
       return '--';
     } else {
