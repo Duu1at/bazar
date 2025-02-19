@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: authentication_client,deep_link_client,package_info_client,storage
+# melos_managed_dependency_overrides: authentication_client,deep_link_client,package_info_client,storage,persistent_storage
 dependency_overrides:
   authentication_client:
     path: ../authentication_client/authentication_client
@@ -6,5 +6,7 @@ dependency_overrides:
     path: ../deep_link_client/deep_link_client
   package_info_client:
     path: ../package_info_client
+  persistent_storage:
+    path: ../storage/persistent_storage
   storage:
     path: ../storage/storage

@@ -9,7 +9,7 @@ import 'package:app/submit/view/submit_view.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mb_storage/mb_storage.dart';
+import 'package:persistent_storage/persistent_storage.dart';
 import 'package:user_repository/user_repository.dart';
 
 class App extends StatelessWidget {
@@ -17,17 +17,17 @@ class App extends StatelessWidget {
     required UserRepository userRepository,
     required AnalyticsRepository analyticsRepository,
     required User user,
-    required MbStorage mbStorage,
+    required PersistentStorage persistentStorage,
     super.key,
   })  : _userRepository = userRepository,
         _analyticsRepository = analyticsRepository,
         _user = user,
-        _mbStorage = mbStorage;
+        _persistentStorage = persistentStorage;
 
   final UserRepository _userRepository;
   final AnalyticsRepository _analyticsRepository;
   final User _user;
-  final MbStorage _mbStorage;
+  final PersistentStorage _persistentStorage;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,13 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: _userRepository),
         RepositoryProvider.value(value: _analyticsRepository),
+        RepositoryProvider<AppRepository>(
+          create: (context) => AppRepositoryImpl(
+            AppLocalDataSourceImpl(
+              storage: _persistentStorage,
+            ),
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -51,10 +58,10 @@ class App extends StatelessWidget {
             lazy: false,
           ),
           BlocProvider(
-            create: (_) => AppThemeCubit(
-              _mbStorage,
+            create: (context) => AppThemeCubit(
+              context.read<AppRepository>(),
             ),
-          )
+          ),
         ],
         child: const AppView(),
       ),
@@ -68,8 +75,9 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Bazar',
       themeMode: ThemeMode.light,
-      theme: AppTheme().themeData,
+      theme: context.watch<AppThemeCubit>().state.themeData,
       darkTheme: AppDarkTheme().themeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

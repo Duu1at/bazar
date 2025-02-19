@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: persistent_storage,storage
+dependency_overrides:
+  persistent_storage:
+    path: ../storage/persistent_storage
+  storage:
+    path: ../storage/storage

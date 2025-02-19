@@ -1,4 +1,8 @@
-# melos_managed_dependency_overrides: app_ui
+# melos_managed_dependency_overrides: app_ui,persistent_storage,storage
 dependency_overrides:
   app_ui:
     path: ..
+  persistent_storage:
+    path: ../../storage/persistent_storage
+  storage:
+    path: ../../storage/storage

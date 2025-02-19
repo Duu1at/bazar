@@ -1,8 +1,7 @@
-import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:gallery/colors/colors.dart';
 import 'package:gallery/spacing/spacing.dart';
-import 'package:gallery/typography/typography.dart';
+import 'package:gallery/typography/typography_page.dart';
 import 'package:gallery/widgets/widgets.dart';
 
 void main() => runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter News Example Gallery',
-      theme: const AppTheme().themeData,
+      theme: ThemeData(),
       home: const RootPage(),
     );
   }
@@ -36,7 +35,7 @@ class RootPage extends StatelessWidget {
         icon: const Icon(Icons.text_format),
         title: const Text('Typography'),
         subtitle: const Text('All of the predefined text styles'),
-        onTap: () => Navigator.of(context).push<void>(TypographyPage.route()),
+        onTap: () => Navigator.of(context).push<void>(ThemeTypographyPage.route()),
       ),
       _ListItem(
         icon: const Icon(Icons.border_vertical),

@@ -9,7 +9,6 @@ import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mb_storage/mb_storage.dart';
 import 'package:package_info_client/package_info_client.dart';
 import 'package:persistent_storage/persistent_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,7 +26,7 @@ void main() async {
 
   Bloc.observer = const AppBlocObserver(onLog: log);
 
-  final storage = await MbStorage.getInstance();
+  // final storage = await MbStorage.getInstance();
   // final firebaseAuth = FirebaseAuth.instance;
 
   final tokenStorage = InMemoryTokenStorage();
@@ -71,7 +70,7 @@ void main() async {
       userRepository: userRepository,
       user: await userRepository.user.first,
       analyticsRepository: analyticsRepository,
-      mbStorage: storage,
+      persistentStorage: persistentStorage,
     ),
   );
 }

@@ -6,26 +6,21 @@ abstract class UserStorageKeys {
   static const appOpenedCount = '__app_opened_count_key__';
 }
 
-/// {@template user_storage}
-/// Storage for the [UserRepository].
-/// {@endtemplate}
 class UserStorage {
-  /// {@macro user_storage}
   const UserStorage({
-    required Storage storage,
+    required PersistentStorage storage,
   }) : _storage = storage;
 
-  final Storage _storage;
+  final PersistentStorage _storage;
 
-  /// Sets the number of times the app was opened.
-  Future<void> setAppOpenedCount({required int count}) => _storage.write(
+  Future<void> setAppOpenedCount({required int count}) => _storage.writeString(
         key: UserStorageKeys.appOpenedCount,
         value: count.toString(),
       );
 
   /// Fetches the number of times the app was opened value from Storage.
   Future<int> fetchAppOpenedCount() async {
-    final count = await _storage.read(key: UserStorageKeys.appOpenedCount);
+    final count = await _storage.readString(key: UserStorageKeys.appOpenedCount);
     return int.parse(count ?? '0');
   }
 }

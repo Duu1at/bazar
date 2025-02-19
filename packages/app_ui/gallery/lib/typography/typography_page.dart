@@ -1,85 +1,197 @@
-// import 'package:app_ui/app_ui.dart';
-// import 'package:flutter/material.dart';
+import 'package:app_ui/app_ui.dart';
+import 'package:flutter/material.dart';
 
-// class TypographyPage extends StatelessWidget {
-//   const TypographyPage({super.key});
+class ThemeTypographyPage extends StatelessWidget {
+  const ThemeTypographyPage({super.key});
 
-//   static Route<void> route() {
-//     return MaterialPageRoute<void>(builder: (_) => const TypographyPage());
-//   }
+  static Route<void> route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => const ThemeTypographyPage(),
+    );
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final uiTextStyleList = [
-//       _TextItem(name: 'Display 2', style: UITextStyle.display2),
-//       _TextItem(name: 'Display 3', style: UITextStyle.display3),
-//       _TextItem(name: 'Headline 1', style: UITextStyle.headline1),
-//       _TextItem(name: 'Headline 2', style: UITextStyle.headline2),
-//       _TextItem(name: 'Headline 3', style: UITextStyle.headline3),
-//       _TextItem(name: 'Headline 4', style: UITextStyle.headline4),
-//       _TextItem(name: 'Headline 5', style: UITextStyle.headline5),
-//       _TextItem(name: 'Headline 6', style: UITextStyle.headline6),
-//       _TextItem(name: 'Subtitle 1', style: UITextStyle.subtitle1),
-//       _TextItem(name: 'Subtitle 2', style: UITextStyle.subtitle2),
-//       _TextItem(name: 'Body Text 1', style: UITextStyle.bodyText1),
-//       _TextItem(name: 'Body Text 2', style: UITextStyle.bodyText2),
-//       _TextItem(name: 'Caption', style: UITextStyle.caption),
-//       _TextItem(name: 'Button', style: UITextStyle.button),
-//       _TextItem(name: 'Overline', style: UITextStyle.overline),
-//       _TextItem(name: 'Label Small', style: UITextStyle.labelSmall),
-//     ];
+  @override
+  Widget build(BuildContext context) {
+    final primaryTextTheme = Theme.of(context).primaryTextTheme;
+    final textTheme = Theme.of(context).textTheme;
+    final primaryTextThemes = [
+      TextItem(
+        name: 'Display Large',
+        style: primaryTextTheme.displayLarge,
+      ),
+      TextItem(
+        name: 'Display Medium',
+        style: primaryTextTheme.displayMedium,
+      ),
+      TextItem(
+        name: 'Display Small',
+        style: primaryTextTheme.displaySmall,
+      ),
+      TextItem(
+        name: 'Headline Large',
+        style: primaryTextTheme.headlineLarge,
+      ),
+      TextItem(
+        name: 'Headline Medium',
+        style: primaryTextTheme.headlineMedium,
+      ),
+      TextItem(
+        name: 'Headline Small',
+        style: primaryTextTheme.headlineSmall,
+      ),
+      TextItem(
+        name: 'Title Large',
+        style: primaryTextTheme.titleLarge,
+      ),
+      TextItem(
+        name: 'Title Medium',
+        style: primaryTextTheme.titleMedium,
+      ),
+      TextItem(
+        name: 'Title Small',
+        style: primaryTextTheme.titleSmall,
+      ),
+      TextItem(
+        name: 'Body Large',
+        style: primaryTextTheme.bodyLarge,
+      ),
+      TextItem(
+        name: 'Body Medium',
+        style: primaryTextTheme.bodyMedium,
+      ),
+      TextItem(
+        name: 'Body Small',
+        style: primaryTextTheme.bodySmall,
+      ),
+      TextItem(
+        name: 'Label Large',
+        style: primaryTextTheme.labelLarge,
+      ),
+      TextItem(
+        name: 'Label Medium',
+        style: primaryTextTheme.labelMedium,
+      ),
+      TextItem(
+        name: 'Label Small',
+        style: primaryTextTheme.labelSmall,
+      ),
+    ];
 
-//     final contentTextStyleList = [
-//       _TextItem(name: 'Display 1', style: ContentTextStyle.display1),
-//       _TextItem(name: 'Display 2', style: ContentTextStyle.display2),
-//       _TextItem(name: 'Display 3', style: ContentTextStyle.display3),
-//       _TextItem(name: 'Headline 1', style: ContentTextStyle.headline1),
-//       _TextItem(name: 'Headline 2', style: ContentTextStyle.headline2),
-//       _TextItem(name: 'Headline 3', style: ContentTextStyle.headline3),
-//       _TextItem(name: 'Headline 4', style: ContentTextStyle.headline4),
-//       _TextItem(name: 'Headline 5', style: ContentTextStyle.headline5),
-//       _TextItem(name: 'Headline 6', style: ContentTextStyle.headline6),
-//       _TextItem(name: 'Subtitle 1', style: ContentTextStyle.subtitle1),
-//       _TextItem(name: 'Subtitle 2', style: ContentTextStyle.subtitle2),
-//       _TextItem(name: 'Body Text 1', style: ContentTextStyle.bodyText1),
-//       _TextItem(name: 'Body Text 2', style: ContentTextStyle.bodyText2),
-//       _TextItem(name: 'Caption', style: ContentTextStyle.caption),
-//       _TextItem(name: 'Button', style: ContentTextStyle.button),
-//       _TextItem(name: 'Overline', style: ContentTextStyle.overline),
-//       _TextItem(name: 'Label Small', style: ContentTextStyle.labelSmall),
-//     ];
+    final textThemes = [
+      TextItem(
+        name: 'Display Large',
+        style: textTheme.displayLarge,
+      ),
+      TextItem(
+        name: 'Display Medium',
+        style: textTheme.displayMedium,
+      ),
+      TextItem(
+        name: 'Display Small',
+        style: textTheme.displaySmall,
+      ),
+      TextItem(
+        name: 'Headline Large',
+        style: textTheme.headlineLarge,
+      ),
+      TextItem(
+        name: 'Headline Medium',
+        style: textTheme.headlineMedium,
+      ),
+      TextItem(
+        name: 'Headline Small',
+        style: textTheme.headlineSmall,
+      ),
+      TextItem(
+        name: 'Title Large',
+        style: textTheme.titleLarge,
+      ),
+      TextItem(
+        name: 'Title Medium',
+        style: textTheme.titleMedium,
+      ),
+      TextItem(
+        name: 'Title Small',
+        style: textTheme.titleSmall,
+      ),
+      TextItem(
+        name: 'Body Large',
+        style: textTheme.bodyLarge,
+      ),
+      TextItem(
+        name: 'Body Medium',
+        style: textTheme.bodyMedium,
+      ),
+      TextItem(
+        name: 'Body Small',
+        style: textTheme.bodySmall,
+      ),
+      TextItem(
+        name: 'Label Large',
+        style: textTheme.labelLarge,
+      ),
+      TextItem(
+        name: 'Label Medium',
+        style: textTheme.labelMedium,
+      ),
+      TextItem(
+        name: 'Label Small',
+        style: textTheme.labelSmall,
+      ),
+    ];
 
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('Typography')),
-//       body: ListView(
-//         children: [
-//           const Center(child: Text('UI Typography')),
-//           const SizedBox(height: 16),
-//           ...uiTextStyleList,
-//           const SizedBox(height: 32),
-//           const Center(child: Text('Content Typography')),
-//           const SizedBox(height: 16),
-//           ...contentTextStyleList,
-//         ],
-//       ),
-//     );
-//   }
-// }
+    return DefaultTabController(
+      initialIndex: 1,
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Typography'),
+          bottom: const TabBar(
+            tabs: <Widget>[
+              Tab(text: 'Primary Text Theme'),
+              Tab(text: 'Text Theme'),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            ListView.builder(
+              itemCount: primaryTextThemes.length,
+              itemBuilder: (context, index) {
+                return primaryTextThemes[index];
+              },
+            ),
+            ListView.builder(
+              itemCount: textThemes.length,
+              itemBuilder: (context, index) {
+                return textThemes[index];
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-// class _TextItem extends StatelessWidget {
-//   const _TextItem({required this.name, required this.style});
+class TextItem extends StatelessWidget {
+  const TextItem({
+    required this.name,
+    required this.style,
+    super.key,
+  });
 
-//   final String name;
-//   final TextStyle style;
+  final String name;
+  final TextStyle? style;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(
-//         horizontal: AppSpacing.sm,
-//         vertical: AppSpacing.lg,
-//       ),
-//       child: Text(name, style: style),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.lg,
+      ),
+      child: Text(name, style: style),
+    );
+  }
+}

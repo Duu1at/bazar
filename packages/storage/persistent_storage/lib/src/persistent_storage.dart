@@ -4,7 +4,7 @@ import 'package:storage/storage.dart';
 /// {@template persistent_storage}
 /// Storage that saves data in the device's persistent memory.
 /// {@endtemplate}
-class PersistentStorage implements Storage {
+class PersistentStorage implements StorageInterfaceSyncRead {
   /// {@macro persistent_storage}
   const PersistentStorage({
     required SharedPreferences sharedPreferences,
@@ -12,12 +12,53 @@ class PersistentStorage implements Storage {
 
   final SharedPreferences _sharedPreferences;
 
-  /// Returns value for the provided [key] from storage.
-  /// Returns `null` if no value is found for the given [key].
-  ///
-  /// Throws a [StorageException] if the read fails.
   @override
-  Future<String?> read({required String key}) async {
+  Future<bool> clear() {
+    try {
+      return _sharedPreferences.clear();
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  Future<bool> delete({required String key}) {
+    try {
+      return _sharedPreferences.remove(key);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  bool? readBool({required String key}) {
+    try {
+      return _sharedPreferences.getBool(key);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  double? readDouble({required String key}) {
+    try {
+      return _sharedPreferences.getDouble(key);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  int? readInt({required String key}) {
+    try {
+      return _sharedPreferences.getInt(key);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  String? readString({required String key}) {
     try {
       return _sharedPreferences.getString(key);
     } catch (error, stackTrace) {
@@ -25,37 +66,55 @@ class PersistentStorage implements Storage {
     }
   }
 
-  /// Writes the provided [key], [value] pair into storage.
-  ///
-  /// Throws a [StorageException] if the write fails.
   @override
-  Future<void> write({required String key, required String value}) async {
+  List<String>? readStringList({required String key}) {
     try {
-      await _sharedPreferences.setString(key, value);
+      return _sharedPreferences.getStringList(key);
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(StorageException(error), stackTrace);
     }
   }
 
-  /// Removes the value for the provided [key] from storage.
-  ///
-  /// Throws a [StorageException] if the delete fails.
   @override
-  Future<void> delete({required String key}) async {
+  Future<bool> writeBool({required String key, required bool value}) {
     try {
-      await _sharedPreferences.remove(key);
+      return _sharedPreferences.setBool(key, value);
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(StorageException(error), stackTrace);
     }
   }
 
-  /// Removes all key, value pairs from storage.
-  ///
-  /// Throws a [StorageException] if the clear fails.
   @override
-  Future<void> clear() async {
+  Future<bool> writeDouble({required String key, required double value}) {
     try {
-      await _sharedPreferences.clear();
+      return _sharedPreferences.setDouble(key, value);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  Future<bool> writeInt({required String key, required int value}) {
+    try {
+      return _sharedPreferences.setInt(key, value);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  Future<bool> writeString({required String key, required String value}) {
+    try {
+      return _sharedPreferences.setString(key, value);
+    } catch (error, stackTrace) {
+      Error.throwWithStackTrace(StorageException(error), stackTrace);
+    }
+  }
+
+  @override
+  Future<bool> writeStringList({required String key, required List<String> value}) {
+    try {
+      return _sharedPreferences.setStringList(key, value);
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(StorageException(error), stackTrace);
     }
