@@ -190,67 +190,7 @@ void main() {
     });
 
     group('logInWithTwitter', () {
-      test('calls logInWithTwitter on AuthenticationClient', () async {
-        when(
-          () => authenticationClient.logInWithTwitter(),
-        ).thenAnswer((_) async {});
-        await userRepository.logInWithTwitter();
-        verify(() => authenticationClient.logInWithTwitter()).called(1);
-      });
-
-      test('rethrows LogInWithTwitterFailure', () async {
-        final exception = FakeLogInWithTwitterFailure();
-        when(() => authenticationClient.logInWithTwitter()).thenThrow(exception);
-        expect(() => userRepository.logInWithTwitter(), throwsA(exception));
-      });
-
-      test('rethrows LogInWithTwitterCanceled', () async {
-        final exception = FakeLogInWithTwitterCanceled();
-        when(() => authenticationClient.logInWithTwitter()).thenThrow(exception);
-        expect(userRepository.logInWithTwitter(), throwsA(exception));
-      });
-
-      test('throws LogInWithTwitterFailure on generic exception', () async {
-        when(
-          () => authenticationClient.logInWithTwitter(),
-        ).thenThrow(Exception());
-        expect(
-          () => userRepository.logInWithTwitter(),
-          throwsA(isA<LogInWithTwitterFailure>()),
-        );
-      });
-    });
-
-    group('logInWithFacebook', () {
-      test('calls logInWithFacebook on AuthenticationClient', () async {
-        when(
-          () => authenticationClient.logInWithFacebook(),
-        ).thenAnswer((_) async {});
-        await userRepository.logInWithFacebook();
-        verify(() => authenticationClient.logInWithFacebook()).called(1);
-      });
-
-      test('rethrows LogInWithFacebookFailure', () async {
-        final exception = FakeLogInWithFacebookFailure();
-        when(() => authenticationClient.logInWithFacebook()).thenThrow(exception);
-        expect(() => userRepository.logInWithFacebook(), throwsA(exception));
-      });
-
-      test('rethrows LogInWithFacebookCanceled', () async {
-        final exception = FakeLogInWithFacebookCanceled();
-        when(() => authenticationClient.logInWithFacebook()).thenThrow(exception);
-        expect(userRepository.logInWithFacebook(), throwsA(exception));
-      });
-
-      test('throws LogInWithFacebookFailure on generic exception', () async {
-        when(
-          () => authenticationClient.logInWithFacebook(),
-        ).thenThrow(Exception());
-        expect(
-          () => userRepository.logInWithFacebook(),
-          throwsA(isA<LogInWithFacebookFailure>()),
-        );
-      });
+      
     });
 
     group('sendLoginEmailLink', () {

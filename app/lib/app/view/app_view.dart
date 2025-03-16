@@ -78,7 +78,7 @@ class AppView extends StatelessWidget {
       title: 'Bazar',
       themeMode: ThemeMode.light,
       theme: context.watch<AppThemeCubit>().state.themeData,
-      darkTheme: AppDarkTheme().themeData,
+      darkTheme:const AppDarkTheme().themeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const AppViewBody(),

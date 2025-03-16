@@ -64,10 +64,6 @@ class _LoginContent extends StatelessWidget {
                 _AppleLoginButton(),
               ],
               const SizedBox(height: AppSpacing.lg),
-              _FacebookLoginButton(),
-              const SizedBox(height: AppSpacing.lg),
-              _TwitterLoginButton(),
-              const SizedBox(height: AppSpacing.lg),
               _ContinueWithEmailLoginButton(),
             ],
           ),
@@ -98,7 +94,7 @@ class _LoginTitleAndCloseButton extends StatelessWidget {
           constraints: const BoxConstraints.tightFor(width: 24, height: 36),
           padding: EdgeInsets.zero,
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.close),
+          icon:  Icon(Icons.close,color: Theme.of(context).colorScheme.onPrimaryContainer),
         ),
       ],
     );
@@ -153,42 +149,6 @@ class _GoogleLoginButton extends StatelessWidget {
             padding: const EdgeInsets.only(top: AppSpacing.xxs),
             child: Assets.images.continueWithGoogle.svg(),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class _FacebookLoginButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return AppButton.blueDress(
-      key: const Key('loginForm_facebookLogin_appButton'),
-      onPressed: () => context.read<LoginBloc>().add(LoginFacebookSubmitted()),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Assets.icons.facebook.svg(),
-          const SizedBox(width: AppSpacing.lg),
-          Assets.images.continueWithFacebook.svg(),
-        ],
-      ),
-    );
-  }
-}
-
-class _TwitterLoginButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return AppButton.crystalBlue(
-      key: const Key('loginForm_twitterLogin_appButton'),
-      onPressed: () => context.read<LoginBloc>().add(LoginTwitterSubmitted()),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Assets.icons.twitter.svg(),
-          const SizedBox(width: AppSpacing.lg),
-          Assets.images.continueWithTwitter.svg(),
         ],
       ),
     );

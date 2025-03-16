@@ -145,8 +145,7 @@ void main() {
         firebaseAuth: firebaseAuth,
         googleSignIn: googleSignIn,
         getAppleCredentials: getAppleCredentials,
-        facebookAuth: facebookAuth,
-        twitterLogin: twitterLogin,
+     
       );
     });
 
@@ -274,59 +273,6 @@ void main() {
         when(() => firebaseAuth.signInWithCredential(any()))
             .thenAnswer((_) => Future.value(MockUserCredential()));
       });
-
-      test('calls login authentication and signInWithCredential', () async {
-        await firebaseAuthenticationClient.logInWithFacebook();
-        verify(() => facebookAuth.login()).called(1);
-        verify(() => firebaseAuth.signInWithCredential(any())).called(1);
-      });
-
-      test('succeeds when login succeeds', () {
-        expect(firebaseAuthenticationClient.logInWithFacebook(), completes);
-      });
-
-      test(
-          'throws LogInWithFacebookFailure '
-          'when signInWithCredential throws', () async {
-        when(() => firebaseAuth.signInWithCredential(any()))
-            .thenThrow(Exception());
-        expect(
-          firebaseAuthenticationClient.logInWithFacebook(),
-          throwsA(isA<LogInWithFacebookFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithFacebookFailure '
-          'when login result status is failed', () async {
-        when(() => loginResult.status)
-            .thenReturn(facebook_auth.LoginStatus.failed);
-        expect(
-          firebaseAuthenticationClient.logInWithFacebook(),
-          throwsA(isA<LogInWithFacebookFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithFacebookFailure '
-          'when login result access token is empty', () async {
-        when(() => loginResult.accessToken).thenReturn(null);
-        expect(
-          firebaseAuthenticationClient.logInWithFacebook(),
-          throwsA(isA<LogInWithFacebookFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithFacebookCanceled '
-          'when login result status is cancelled', () async {
-        when(() => loginResult.status)
-            .thenReturn(facebook_auth.LoginStatus.cancelled);
-        expect(
-          firebaseAuthenticationClient.logInWithFacebook(),
-          throwsA(isA<LogInWithFacebookCanceled>()),
-        );
-      });
     });
 
     group('logInWithTwitter', () {
@@ -344,69 +290,6 @@ void main() {
         when(() => twitterLogin.loginV2()).thenAnswer((_) async => loginResult);
         when(() => firebaseAuth.signInWithCredential(any()))
             .thenAnswer((_) => Future.value(MockUserCredential()));
-      });
-
-      test('calls loginV2 authentication and signInWithCredential', () async {
-        await firebaseAuthenticationClient.logInWithTwitter();
-        verify(() => twitterLogin.loginV2()).called(1);
-        verify(() => firebaseAuth.signInWithCredential(any())).called(1);
-      });
-
-      test('succeeds when login succeeds', () {
-        expect(firebaseAuthenticationClient.logInWithTwitter(), completes);
-      });
-
-      test(
-          'throws LogInWithTwitterFailure '
-          'when signInWithCredential throws', () async {
-        when(() => firebaseAuth.signInWithCredential(any()))
-            .thenThrow(Exception());
-        expect(
-          firebaseAuthenticationClient.logInWithTwitter(),
-          throwsA(isA<LogInWithTwitterFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithTwitterFailure '
-          'when login result status is error', () async {
-        when(() => loginResult.status)
-            .thenReturn(twitter_auth.TwitterLoginStatus.error);
-        expect(
-          firebaseAuthenticationClient.logInWithTwitter(),
-          throwsA(isA<LogInWithTwitterFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithTwitterFailure '
-          'when login result auth token is empty', () async {
-        when(() => loginResult.authToken).thenReturn(null);
-        expect(
-          firebaseAuthenticationClient.logInWithTwitter(),
-          throwsA(isA<LogInWithTwitterFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithTwitterFailure '
-          'when login result auth token secret is empty', () async {
-        when(() => loginResult.authTokenSecret).thenReturn(null);
-        expect(
-          firebaseAuthenticationClient.logInWithTwitter(),
-          throwsA(isA<LogInWithTwitterFailure>()),
-        );
-      });
-
-      test(
-          'throws LogInWithTwitterCanceled '
-          'when login result status is cancelledByUser', () async {
-        when(() => loginResult.status)
-            .thenReturn(twitter_auth.TwitterLoginStatus.cancelledByUser);
-        expect(
-          firebaseAuthenticationClient.logInWithTwitter(),
-          throwsA(isA<LogInWithTwitterCanceled>()),
-        );
       });
     });
 

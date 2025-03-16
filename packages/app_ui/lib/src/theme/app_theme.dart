@@ -110,12 +110,12 @@ abstract class AppTheme {
 
   BottomNavigationBarThemeData get bottomAppBarTheme {
     return BottomNavigationBarThemeData(
-      selectedItemColor: colorScheme.primary,
+      selectedItemColor: colorScheme.secondary,
       selectedIconTheme: IconThemeData(
-        color: colorScheme.outline,
+        color: colorScheme.secondary,
         size: 30,
       ),
-      unselectedItemColor: colorScheme.secondary,
+      unselectedItemColor: colorScheme.outline,
       showSelectedLabels: false,
       showUnselectedLabels: false,
     );

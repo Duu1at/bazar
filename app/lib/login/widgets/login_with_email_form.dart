@@ -21,7 +21,7 @@ class LoginWithEmailForm extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              SnackBar(content: Text('Autentication failed')),
+             const SnackBar(content: Text('Autentication failed')),
             );
         }
       },

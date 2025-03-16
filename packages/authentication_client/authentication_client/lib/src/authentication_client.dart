@@ -127,16 +127,6 @@ abstract class AuthenticationClient {
   /// Throws a [LogInWithGoogleFailure] if an exception occurs.
   Future<void> logInWithGoogle();
 
-  /// Starts the Sign In with Facebook Flow.
-  ///
-  /// Throws a [LogInWithFacebookFailure] if an exception occurs.
-  Future<void> logInWithFacebook();
-
-  /// Starts the Sign In with Twitter Flow.
-  ///
-  /// Throws a [LogInWithTwitterFailure] if an exception occurs.
-  Future<void> logInWithTwitter();
-
   /// Sends an authentication link to the provided [email].
   ///
   /// Opening the link should redirect to the app with [appPackageName]

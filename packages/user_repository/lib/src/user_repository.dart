@@ -134,39 +134,6 @@ class UserRepository {
       Error.throwWithStackTrace(LogInWithGoogleFailure(error), stackTrace);
     }
   }
-
-  /// Starts the Sign In with Twitter Flow.
-  ///
-  /// Throws a [LogInWithTwitterCanceled] if the flow is canceled by the user.
-  /// Throws a [LogInWithTwitterFailure] if an exception occurs.
-  Future<void> logInWithTwitter() async {
-    try {
-      await _authenticationClient.logInWithTwitter();
-    } on LogInWithTwitterFailure {
-      rethrow;
-    } on LogInWithTwitterCanceled {
-      rethrow;
-    } catch (error, stackTrace) {
-      Error.throwWithStackTrace(LogInWithTwitterFailure(error), stackTrace);
-    }
-  }
-
-  /// Starts the Sign In with Facebook Flow.
-  ///
-  /// Throws a [LogInWithFacebookCanceled] if the flow is canceled by the user.
-  /// Throws a [LogInWithFacebookFailure] if an exception occurs.
-  Future<void> logInWithFacebook() async {
-    try {
-      await _authenticationClient.logInWithFacebook();
-    } on LogInWithFacebookFailure {
-      rethrow;
-    } on LogInWithFacebookCanceled {
-      rethrow;
-    } catch (error, stackTrace) {
-      Error.throwWithStackTrace(LogInWithFacebookFailure(error), stackTrace);
-    }
-  }
-
   /// Sends an authentication link to the provided [email].
   ///
   /// Throws a [SendLoginEmailLinkFailure] if an exception occurs.
