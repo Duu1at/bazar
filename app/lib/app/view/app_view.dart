@@ -1,11 +1,9 @@
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app/app/bloc/app_bloc.dart';
 import 'package:app/app/cubit/app_cubit.dart';
-import 'package:app/chat/view/chat_view.dart';
-import 'package:app/home/view/home_view.dart';
 import 'package:app/l10n/l10.dart';
 import 'package:app/login/bloc/login_with_email_link_bloc.dart';
-import 'package:app/submit/view/submit_view.dart';
+import 'package:app/main/view/main.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -81,83 +79,7 @@ class AppView extends StatelessWidget {
       darkTheme:const AppDarkTheme().themeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const AppViewBody(),
-    );
-  }
-}
-
-class AppViewBody extends StatefulWidget {
-  const AppViewBody({super.key});
-
-  @override
-  State<AppViewBody> createState() => _AppViewBodyState();
-}
-
-class _AppViewBodyState extends State<AppViewBody> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _screens = [
-    const HomeView(),
-    const SubmitView(),
-    const ChatView(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter  App'),
-      ),
-      body: _screens[_selectedIndex],
-      drawer: Drawer(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          _selectedIndex = index;
-          setState(() {});
-        },
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Главная',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Подать',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Чат',
-          ),
-        ],
-      ),
+      home: const MainView(),
     );
   }
 }

@@ -26,9 +26,6 @@ void main() async {
 
   Bloc.observer = const AppBlocObserver(onLog: log);
 
-  // final storage = await MbStorage.getInstance();
-  // final firebaseAuth = FirebaseAuth.instance;
-
   final tokenStorage = InMemoryTokenStorage();
 
   final packageInfoClient = PackageInfoClient(
@@ -37,7 +34,6 @@ void main() async {
     packageVersion: '1.0.0',
   );
 
-  // ignore: deprecated_member_use
   final firebaseDynamicLinks = FirebaseDynamicLinks.instance;
 
   final deepLinkService = DeepLinkService(
