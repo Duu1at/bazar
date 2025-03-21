@@ -9,9 +9,11 @@ import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:package_info_client/package_info_client.dart';
 import 'package:persistent_storage/persistent_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:token_storage/token_storage.dart';
 import 'package:user_repository/user_repository.dart';
 import 'app/view/app_view.dart';
@@ -19,15 +21,12 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Supabase.initialize(url: dotenv.env['SUPABASE_URL']!, anonKey: dotenv.env['SUPABASE_ANON_KEY']!);
 
   Bloc.observer = const AppBlocObserver(onLog: log);
-
   final tokenStorage = InMemoryTokenStorage();
-
   final packageInfoClient = PackageInfoClient(
     appName: 'Flutter News Example [DEV]',
     packageName: 'com.flutter.news.example.dev',
@@ -37,21 +36,15 @@ void main() async {
   final firebaseDynamicLinks = FirebaseDynamicLinks.instance;
 
   final deepLinkService = DeepLinkService(
-    deepLinkClient: FirebaseDeepLinkClient(
-      firebaseDynamicLinks: firebaseDynamicLinks,
-    ),
+    deepLinkClient: FirebaseDeepLinkClient(firebaseDynamicLinks: firebaseDynamicLinks),
   );
 
   final sharedPreferences = await SharedPreferences.getInstance();
 
-  final persistentStorage = PersistentStorage(
-    sharedPreferences: sharedPreferences,
-  );
+  final persistentStorage = PersistentStorage(sharedPreferences: sharedPreferences);
 
   final userStorage = UserStorage(storage: persistentStorage);
-  final authenticationClient = FirebaseAuthenticationClient(
-    tokenStorage: tokenStorage,
-  );
+  final authenticationClient = FirebaseAuthenticationClient(tokenStorage: tokenStorage);
 
   final userRepository = UserRepository(
     authenticationClient: authenticationClient,
