@@ -63,9 +63,10 @@
 				<string>Editor</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
-					<string>io.supabase.flutterquickstart</string>
+					<string>com.googleusercontent.apps.my-ios</string>
 				</array>
 			</dict>
 		</array>
+
 	</dict>
 </plist>

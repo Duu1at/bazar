@@ -9,7 +9,6 @@ dependencies:
   flutter:
     sdk: flutter
   intl: ^0.19.0
-  flutter_svg: ^2.0.5
   mockingjay: ^0.6.0
   persistent_storage:
     path: ../storage/persistent_storage
@@ -55,6 +54,3 @@ flutter_gen:
       package_parameter_enabled: true
   output: lib/src/generated/
   line_length: 120
-
-  integrations:
-    flutter_svg: true

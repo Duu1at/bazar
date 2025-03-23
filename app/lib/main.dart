@@ -1,19 +1,14 @@
 import 'dart:developer';
+import 'dart:ui';
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app/app_observer.dart';
-import 'package:deep_link_client/deep_link_client.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_authentication_client/firebase_authentication_client.dart';
-import 'package:firebase_deep_link_client/firebase_deep_link_client.dart';
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:package_info_client/package_info_client.dart';
 import 'package:persistent_storage/persistent_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_client/supabase_client.dart';
 import 'package:token_storage/token_storage.dart';
 import 'package:user_repository/user_repository.dart';
 import 'app/view/app_view.dart';
@@ -21,38 +16,39 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  // await dotenv.load(fileName: ".env");
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await Supabase.initialize(url: dotenv.env['SUPABASE_URL']!, anonKey: dotenv.env['SUPABASE_ANON_KEY']!);
-
+  await SupabaseClientProvider.initialize(
+    supabaseUrl: 'https://esvpvhyeaziwhskxjcju.supabase.co',
+    supabaseAnonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzdnB2aHllYXppd2hza3hqY2p1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIzOTc4MjMsImV4cCI6MjA1Nzk3MzgyM30.7tosOw0noUFyBZNjIWO-DuSUP03cTTIDCts6xyZtugY',
+  );
   Bloc.observer = const AppBlocObserver(onLog: log);
-  final tokenStorage = InMemoryTokenStorage();
-  final packageInfoClient = PackageInfoClient(
-    appName: 'Flutter News Example [DEV]',
-    packageName: 'com.flutter.news.example.dev',
-    packageVersion: '1.0.0',
-  );
+  FlutterError.onError = (FlutterErrorDetails details) {
+    debugPrint('‼️ FLUTTER ERROR: ${details.exception}');
+    if (details.stack != null) {
+      debugPrint('🔄 STACKTRACE: ${details.stack}');
+    }
+    FlutterError.dumpErrorToConsole(details);
+  };
 
-  final firebaseDynamicLinks = FirebaseDynamicLinks.instance;
+  PlatformDispatcher.instance.onError = (error, stack) {
+    debugPrint('‼️ GLOBAL ERROR: $error');
 
-  final deepLinkService = DeepLinkService(
-    deepLinkClient: FirebaseDeepLinkClient(firebaseDynamicLinks: firebaseDynamicLinks),
-  );
+    debugPrint('🔄 STACKTRACE: $stack');
+
+    return true;
+  };
 
   final sharedPreferences = await SharedPreferences.getInstance();
-
   final persistentStorage = PersistentStorage(sharedPreferences: sharedPreferences);
-
-  final userStorage = UserStorage(storage: persistentStorage);
-  final authenticationClient = FirebaseAuthenticationClient(tokenStorage: tokenStorage);
-
-  final userRepository = UserRepository(
-    authenticationClient: authenticationClient,
-    packageInfoClient: packageInfoClient,
-    deepLinkService: deepLinkService,
-    storage: userStorage,
-  );
   final analyticsRepository = AnalyticsRepository(FirebaseAnalytics.instance);
+  final tokenStorage = InMemoryTokenStorage();
+  final userRepository = UserRepository(
+    persistentStorage: persistentStorage,
+    client: SupabaseClientProvider.client,
+    tokenStorage: tokenStorage,
+  );
 
   runApp(
     App(

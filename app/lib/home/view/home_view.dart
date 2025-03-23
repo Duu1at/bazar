@@ -1,3 +1,4 @@
+import 'package:app/auth/view/auth_check_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -10,6 +11,13 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('HomeView is working'));
+    return Center(
+      child: TextButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const AuthCheckView()));
+        },
+        child: const Text('To check user'),
+      ),
+    );
   }
 }

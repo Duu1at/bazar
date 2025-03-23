@@ -11,31 +11,20 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-   int _selectedIndex = 0;
+  int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    const HomeView(),
-    const SubmitView(),
-    const ChatView(),
-  ];
+  final List<Widget> _screens = [const HomeView(), const SubmitView(), const ChatView()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter  App'),
-      ),
+      appBar: AppBar(title: const Text('Flutter  App')),
       body: _screens[_selectedIndex],
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
+            const DrawerHeader(decoration: BoxDecoration(color: Colors.blue), child: Text('Drawer Header')),
             ListTile(
               title: const Text('Item 1'),
               onTap: () {
@@ -60,18 +49,9 @@ class _MainViewState extends State<MainView> {
           setState(() {});
         },
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Главная',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Подать',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Чат',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Главная'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Подать'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Чат'),
         ],
       ),
     );

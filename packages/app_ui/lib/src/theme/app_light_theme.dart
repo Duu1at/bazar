@@ -88,7 +88,7 @@ final class AppLightTheme extends AppTheme {
 
   @override
   TextTheme get primaryTextTheme {
-    return TextTheme(
+    return const TextTheme(
       displayLarge: AppTextStyles.displayLarge,
       displayMedium: AppTextStyles.displayMedium,
       displaySmall: AppTextStyles.displaySmall,

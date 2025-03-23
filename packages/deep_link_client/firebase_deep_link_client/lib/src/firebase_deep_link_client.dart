@@ -16,8 +16,7 @@ class FirebaseDeepLinkClient implements DeepLinkClient {
   final FirebaseDynamicLinks _firebaseDynamicLinks;
 
   @override
-  Stream<Uri> get deepLinkStream =>
-      _firebaseDynamicLinks.onLink.map((event) => event.link);
+  Stream<Uri> get deepLinkStream => _firebaseDynamicLinks.onLink.map((event) => event.link);
 
   @override
   Future<Uri?> getInitialLink() async {

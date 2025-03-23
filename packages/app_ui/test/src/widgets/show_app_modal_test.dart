@@ -22,8 +22,7 @@ void main() {
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.red,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-              textStyle:
-                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             child: const Text('Tap'),
           ),

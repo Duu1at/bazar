@@ -5,8 +5,6 @@ class SubmitView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('SubmitView'),
-    );
+    return const Center(child: Text('SubmitView'));
   }
 }

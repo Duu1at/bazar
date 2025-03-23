@@ -18,7 +18,7 @@ class AppDeleteAccountRequested extends AppEvent {
 class AppUserChanged extends AppEvent {
   const AppUserChanged(this.user);
 
-  final User user;
+  final UserModel user;
 
   @override
   List<Object> get props => [user];

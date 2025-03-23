@@ -27,20 +27,16 @@ class $AssetsIconsGen {
   SvgGenImage get bestValue => const SvgGenImage('assets/icons/best_value.svg');
 
   /// File path: assets/icons/close_circle.svg
-  SvgGenImage get closeCircle =>
-      const SvgGenImage('assets/icons/close_circle.svg');
+  SvgGenImage get closeCircle => const SvgGenImage('assets/icons/close_circle.svg');
 
   /// File path: assets/icons/close_circle_filled.svg
-  SvgGenImage get closeCircleFilled =>
-      const SvgGenImage('assets/icons/close_circle_filled.svg');
+  SvgGenImage get closeCircleFilled => const SvgGenImage('assets/icons/close_circle_filled.svg');
 
   /// File path: assets/icons/email_outline.svg
-  SvgGenImage get emailOutline =>
-      const SvgGenImage('assets/icons/email_outline.svg');
+  SvgGenImage get emailOutline => const SvgGenImage('assets/icons/email_outline.svg');
 
   /// File path: assets/icons/envelope_open.svg
-  SvgGenImage get envelopeOpen =>
-      const SvgGenImage('assets/icons/envelope_open.svg');
+  SvgGenImage get envelopeOpen => const SvgGenImage('assets/icons/envelope_open.svg');
 
   /// File path: assets/icons/facebook.svg
   SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
@@ -49,24 +45,19 @@ class $AssetsIconsGen {
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
 
   /// File path: assets/icons/log_in_icon.svg
-  SvgGenImage get logInIcon =>
-      const SvgGenImage('assets/icons/log_in_icon.svg');
+  SvgGenImage get logInIcon => const SvgGenImage('assets/icons/log_in_icon.svg');
 
   /// File path: assets/icons/log_out_icon.svg
-  SvgGenImage get logOutIcon =>
-      const SvgGenImage('assets/icons/log_out_icon.svg');
+  SvgGenImage get logOutIcon => const SvgGenImage('assets/icons/log_out_icon.svg');
 
   /// File path: assets/icons/notifications_icon.svg
-  SvgGenImage get notificationsIcon =>
-      const SvgGenImage('assets/icons/notifications_icon.svg');
+  SvgGenImage get notificationsIcon => const SvgGenImage('assets/icons/notifications_icon.svg');
 
   /// File path: assets/icons/profile_icon.svg
-  SvgGenImage get profileIcon =>
-      const SvgGenImage('assets/icons/profile_icon.svg');
+  SvgGenImage get profileIcon => const SvgGenImage('assets/icons/profile_icon.svg');
 
   /// File path: assets/icons/terms_of_use_icon.svg
-  SvgGenImage get termsOfUseIcon =>
-      const SvgGenImage('assets/icons/terms_of_use_icon.svg');
+  SvgGenImage get termsOfUseIcon => const SvgGenImage('assets/icons/terms_of_use_icon.svg');
 
   /// File path: assets/icons/twitter.svg
   SvgGenImage get twitter => const SvgGenImage('assets/icons/twitter.svg');
@@ -100,38 +91,26 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/continue_with_apple.svg
-  SvgGenImage get continueWithApple =>
-      const SvgGenImage('assets/images/continue_with_apple.svg');
+  SvgGenImage get continueWithApple => const SvgGenImage('assets/images/continue_with_apple.svg');
 
   /// File path: assets/images/continue_with_facebook.svg
-  SvgGenImage get continueWithFacebook =>
-      const SvgGenImage('assets/images/continue_with_facebook.svg');
+  SvgGenImage get continueWithFacebook => const SvgGenImage('assets/images/continue_with_facebook.svg');
 
   /// File path: assets/images/continue_with_google.svg
-  SvgGenImage get continueWithGoogle =>
-      const SvgGenImage('assets/images/continue_with_google.svg');
+  SvgGenImage get continueWithGoogle => const SvgGenImage('assets/images/continue_with_google.svg');
 
   /// File path: assets/images/continue_with_twitter.svg
-  SvgGenImage get continueWithTwitter =>
-      const SvgGenImage('assets/images/continue_with_twitter.svg');
+  SvgGenImage get continueWithTwitter => const SvgGenImage('assets/images/continue_with_twitter.svg');
 
   /// File path: assets/images/logo_dark.png
-  AssetGenImage get logoDark =>
-      const AssetGenImage('assets/images/logo_dark.png');
+  AssetGenImage get logoDark => const AssetGenImage('assets/images/logo_dark.png');
 
   /// File path: assets/images/logo_light.png
-  AssetGenImage get logoLight =>
-      const AssetGenImage('assets/images/logo_light.png');
+  AssetGenImage get logoLight => const AssetGenImage('assets/images/logo_light.png');
 
   /// List of all assets
-  List<dynamic> get values => [
-        continueWithApple,
-        continueWithFacebook,
-        continueWithGoogle,
-        continueWithTwitter,
-        logoDark,
-        logoLight
-      ];
+  List<dynamic> get values =>
+      [continueWithApple, continueWithFacebook, continueWithGoogle, continueWithTwitter, logoDark, logoLight];
 }
 
 class Assets {

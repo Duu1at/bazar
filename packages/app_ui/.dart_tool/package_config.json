@@ -194,12 +194,6 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_svg",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/flutter_svg-2.0.16",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
       "name": "flutter_test",
       "rootUri": "file:///Users/duu1at/fvm/versions/3.29.0/packages/flutter_test",
       "packageUri": "lib/",
@@ -234,12 +228,6 @@
       "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/hashcodes-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "http",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/http-1.2.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.3"
     },
     {
       "name": "http_multi_server",
@@ -596,12 +584,6 @@
       "languageVersion": "3.5"
     },
     {
-      "name": "vector_graphics",
-      "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/vector_graphics-1.1.15",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
       "name": "vector_graphics_codec",
       "rootUri": "file:///Users/duu1at/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.12",
       "packageUri": "lib/",
@@ -686,7 +668,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2025-03-10T10:03:47.611950Z",
+  "generated": "2025-03-23T17:26:49.234755Z",
   "generator": "pub",
   "generatorVersion": "3.7.0",
   "flutterRoot": "file:///Users/duu1at/fvm/versions/3.29.0",

@@ -34,8 +34,7 @@ class WidgetsPage extends StatelessWidget {
       _ListItem(
         icon: const Icon(Icons.arrow_back_ios),
         title: const Text('App Back Button'),
-        onTap: () =>
-            Navigator.of(context).push<void>(AppBackButtonPage.route()),
+        onTap: () => Navigator.of(context).push<void>(AppBackButtonPage.route()),
       ),
       _ListItem(
         icon: const Icon(Icons.switch_left),

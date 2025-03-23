@@ -1,0 +1,12 @@
+# melos_managed_dependency_overrides: authentication_client,persistent_storage,storage,supabase_client,token_storage
+dependency_overrides:
+  authentication_client:
+    path: ../authentication_client
+  persistent_storage:
+    path: ../../storage/persistent_storage
+  storage:
+    path: ../../storage/storage
+  supabase_client:
+    path: ../../supabase_client
+  token_storage:
+    path: ../token_storage

@@ -5,9 +5,7 @@ import 'package:url_launcher_platform_interface/url_launcher_platform_interface.
 /// {@template mock_url_launcher}
 /// Class to mock the methods related to url_launcher package.
 ///{@endtemplate}
-class MockUrlLauncher extends Fake
-    with MockPlatformInterfaceMixin
-    implements UrlLauncherPlatform {
+class MockUrlLauncher extends Fake with MockPlatformInterfaceMixin implements UrlLauncherPlatform {
   /// The string url.
   String? canLaunchUrl;
 

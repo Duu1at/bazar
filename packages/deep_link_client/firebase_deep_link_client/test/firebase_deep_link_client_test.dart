@@ -10,9 +10,7 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockFirebaseDynamicLinks extends Mock implements FirebaseDynamicLinks {}
 
-class MockFirebaseCore extends Mock
-    with MockPlatformInterfaceMixin
-    implements FirebasePlatform {}
+class MockFirebaseCore extends Mock with MockPlatformInterfaceMixin implements FirebasePlatform {}
 
 void main() {
   late MockFirebaseDynamicLinks dynamicLinks;
@@ -21,8 +19,7 @@ void main() {
   setUp(() {
     dynamicLinks = MockFirebaseDynamicLinks();
     onLinkStreamController = StreamController<PendingDynamicLinkData>();
-    when(() => dynamicLinks.onLink)
-        .thenAnswer((_) => onLinkStreamController.stream);
+    when(() => dynamicLinks.onLink).thenAnswer((_) => onLinkStreamController.stream);
   });
 
   tearDown(() {
@@ -37,8 +34,7 @@ void main() {
           (_) => Future.value(PendingDynamicLinkData(link: expectedUri)),
         );
 
-        final client =
-            FirebaseDeepLinkClient(firebaseDynamicLinks: dynamicLinks);
+        final client = FirebaseDeepLinkClient(firebaseDynamicLinks: dynamicLinks);
         final link = await client.getInitialLink();
         expect(link, expectedUri);
       });
@@ -49,8 +45,7 @@ void main() {
         final expectedUri1 = Uri.https('news.app.test', '/test/1');
         final expectedUri2 = Uri.https('news.app.test', '/test/2');
 
-        final client =
-            FirebaseDeepLinkClient(firebaseDynamicLinks: dynamicLinks);
+        final client = FirebaseDeepLinkClient(firebaseDynamicLinks: dynamicLinks);
 
         onLinkStreamController
           ..add(PendingDynamicLinkData(link: expectedUri1))

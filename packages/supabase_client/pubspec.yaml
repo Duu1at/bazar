@@ -1,0 +1,15 @@
+name: supabase_client
+description: Supabase Client Dart package
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+dev_dependencies:
+  mocktail: ^1.0.4
+  test: ^1.25.8
+  very_good_analysis: ^6.0.0
+dependencies:
+  supabase_flutter: ^2.8.4
+  logger: ^2.0.0

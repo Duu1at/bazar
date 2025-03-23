@@ -24,8 +24,7 @@ class AppButton extends StatelessWidget {
         _disabledButtonColor = disabledButtonColor ?? AppColors.disabledButton,
         _borderSide = borderSide,
         _foregroundColor = foregroundColor ?? AppColors.black,
-        _disabledForegroundColor =
-            disabledForegroundColor ?? AppColors.disabledForeground,
+        _disabledForegroundColor = disabledForegroundColor ?? AppColors.disabledForeground,
         _elevation = elevation ?? 0,
         _textStyle = textStyle,
         _maximumSize = maximumSize ?? _defaultMaximumSize,
@@ -392,9 +391,8 @@ class AppButton extends StatelessWidget {
         padding: WidgetStateProperty.all(_padding),
         minimumSize: WidgetStateProperty.all(_minimumSize),
         textStyle: WidgetStateProperty.all(textStyle),
-        backgroundColor: onPressed == null
-            ? WidgetStateProperty.all(_disabledButtonColor)
-            : WidgetStateProperty.all(_buttonColor),
+        backgroundColor:
+            onPressed == null ? WidgetStateProperty.all(_disabledButtonColor) : WidgetStateProperty.all(_buttonColor),
         elevation: WidgetStateProperty.all(_elevation),
         foregroundColor: onPressed == null
             ? WidgetStateProperty.all(_disabledForegroundColor)

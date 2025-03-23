@@ -22,8 +22,7 @@ class ShowAppModalPage extends StatelessWidget {
               horizontal: AppSpacing.xxlg + contentSpace,
               vertical: AppSpacing.xlg,
             ),
-            textStyle:
-                const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           child: const Text('Show app modal'),
         ),

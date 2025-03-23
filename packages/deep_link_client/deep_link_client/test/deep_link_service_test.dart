@@ -15,8 +15,7 @@ void main() {
   setUp(() {
     deepLinkClient = MockDeepLinkClient();
     onDeepLinkStreamController = StreamController<Uri>();
-    when(() => deepLinkClient.deepLinkStream)
-        .thenAnswer((_) => onDeepLinkStreamController.stream);
+    when(() => deepLinkClient.deepLinkStream).thenAnswer((_) => onDeepLinkStreamController.stream);
   });
 
   tearDown(() {
@@ -49,8 +48,7 @@ void main() {
       expect(
         deepLinkService.deepLinkStream,
         emitsError(
-          isA<DeepLinkClientFailure>()
-              .having((failure) => failure.error, 'error', expectedError),
+          isA<DeepLinkClientFailure>().having((failure) => failure.error, 'error', expectedError),
         ),
       );
     });
